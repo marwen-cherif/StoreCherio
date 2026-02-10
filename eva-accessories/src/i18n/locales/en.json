@@ -1,0 +1,60 @@
+{
+    "nav": {
+        "home": "Home",
+        "shop": "Shop",
+        "cart": "Cart"
+    },
+    "hero": {
+        "badge": "New Collection",
+        "title": "Elevate Your Every Day Style",
+        "subtitle": "Carefully selected accessories at adorable prices with fast free shipping.",
+        "cta": "Shop Now"
+    },
+    "products": {
+        "title": "Trending Now",
+        "addToBasket": "Add to Basket",
+        "added": "Added to Basket"
+    },
+    "features": {
+        "materials": {
+            "title": "Premium Materials",
+            "description": "We source only the finest 100% Mulberry silk and genuine freshwater pearls."
+        },
+        "adorablePrices": {
+            "title": "Adorable Prices",
+            "description": "Quality accessories at sweet prices, affordable for all little princesses."
+        },
+        "shipping": {
+            "title": "Free Shipping",
+            "description": "Free shipping on all orders. Delivery within 3-5 days."
+        }
+    },
+    "cart": {
+        "title": "Shopping Basket",
+        "empty": {
+            "title": "Your Basket is Empty",
+            "description": "Looks like you haven't added any accessories yet. Explore our collection to find something beautiful.",
+            "cta": "Start Shopping"
+        },
+        "summary": {
+            "title": "Order Summary",
+            "subtotal": "Subtotal",
+            "shipping": "Shipping",
+            "free": "Free",
+            "tax": "Tax",
+            "taxNote": "Calculated at checkout",
+            "total": "Total",
+            "checkout": "Checkout with Stripe",
+            "secure": "Secure Checkout via Stripe"
+        },
+        "remove": "Remove item"
+    },
+    "success": {
+        "title": "Thank You for Your Order!",
+        "description": "Your beautiful accessories are being prepared with care. We'll send you an email confirmation shortly.",
+        "cta": "Continue Shopping"
+    },
+    "footer": {
+        "rights": "All rights reserved."
+    }
+}

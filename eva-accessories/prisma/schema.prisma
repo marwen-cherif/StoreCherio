@@ -1,0 +1,305 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ==========================================
+// USERS & AUTHENTICATION
+// ==========================================
+
+enum UserRole {
+  CUSTOMER
+  ADMIN
+  SUPER_ADMIN
+}
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  passwordHash  String?   // NULL if OAuth login
+  name          String
+  phone         String?
+  role          UserRole  @default(CUSTOMER)
+  emailVerified DateTime?
+  googleId      String?   @unique
+  image         String?
+  
+  // Relations
+  accounts      Account[]
+  sessions      Session[]
+  addresses     Address[]
+  orders        Order[]
+  cart          Cart?
+  
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  
+  @@map("users")
+}
+
+model Account {
+  id                 String  @id @default(cuid())
+  userId             String
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String?  @db.Text
+  access_token       String?  @db.Text
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?  @db.Text
+  session_state      String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verification_tokens")
+}
+
+model Address {
+  id          String  @id @default(cuid())
+  userId      String
+  user        User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  label       String? // "Home", "Work", etc.
+  firstName   String
+  lastName    String
+  address1    String
+  address2    String?
+  city        String
+  postalCode  String
+  country     String  @default("France")
+  phone       String?
+  isDefault   Boolean @default(false)
+  
+  createdAt   DateTime @default(now())
+  
+  @@map("addresses")
+}
+
+// ==========================================
+// PRODUCTS & CATEGORIES
+// ==========================================
+
+enum AgeRange {
+  AGE_3_5    // 3-5 years
+  AGE_5_8    // 5-8 years
+  AGE_8_12   // 8-12 years
+  ALL        // All ages
+}
+
+enum HairType {
+  STRAIGHT
+  CURLY
+  ALL
+}
+
+model Category {
+  id          String    @id @default(cuid())
+  name        String
+  slug        String    @unique
+  description String?
+  icon        String?
+  sortOrder   Int       @default(0)
+  isActive    Boolean   @default(true)
+  
+  products    Product[]
+  
+  @@map("categories")
+}
+
+model Product {
+  id              String    @id @default(cuid())
+  name            String
+  slug            String    @unique
+  description     String?
+  price           Int       // Price in cents
+  compareAtPrice  Int?      // Original price for sales
+  
+  categoryId      String?
+  category        Category? @relation(fields: [categoryId], references: [id])
+  
+  ageRange        AgeRange  @default(ALL)
+  hairType        HairType  @default(ALL)
+  colors          String[]  // Array of color names
+  images          String[]  // Array of image URLs
+  stock           Int       @default(0)
+  isActive        Boolean   @default(true)
+  
+  cartItems       CartItem[]
+  orderItems      OrderItem[]
+  
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  
+  @@map("products")
+}
+
+// ==========================================
+// CART
+// ==========================================
+
+model Cart {
+  id        String     @id @default(cuid())
+  userId    String?    @unique
+  user      User?      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  sessionId String?    // For guest users
+  expiresAt DateTime?
+  
+  items     CartItem[]
+  
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  
+  @@map("carts")
+}
+
+model CartItem {
+  id        String  @id @default(cuid())
+  cartId    String
+  cart      Cart    @relation(fields: [cartId], references: [id], onDelete: Cascade)
+  productId String
+  product   Product @relation(fields: [productId], references: [id])
+  quantity  Int
+  
+  createdAt DateTime @default(now())
+  
+  @@unique([cartId, productId])
+  @@map("cart_items")
+}
+
+// ==========================================
+// ORDERS
+// ==========================================
+
+enum OrderStatus {
+  PENDING
+  PAID
+  PROCESSING
+  SHIPPED
+  DELIVERED
+  COMPLETED
+  CANCELLED
+  REFUNDED
+}
+
+model Order {
+  id            String      @id @default(cuid())
+  orderNumber   String      @unique // EVA-2026-XXXXX
+  
+  userId        String?
+  user          User?       @relation(fields: [userId], references: [id])
+  
+  status        OrderStatus @default(PENDING)
+  
+  // Shipping address snapshot (immutable)
+  shippingFirstName   String
+  shippingLastName    String
+  shippingAddress1    String
+  shippingAddress2    String?
+  shippingCity        String
+  shippingPostalCode  String
+  shippingCountry     String
+  shippingPhone       String?
+  
+  // Amounts in cents
+  subtotal      Int
+  shippingCost  Int         @default(0)
+  discount      Int         @default(0)
+  total         Int
+  
+  // Shipping
+  shippingMethod  String?
+  trackingNumber  String?
+  trackingUrl     String?
+  
+  // Stripe
+  stripeSessionId       String?
+  stripePaymentIntentId String?
+  
+  // Notes
+  customerNote  String?
+  internalNote  String?
+  
+  // Dates
+  paidAt        DateTime?
+  shippedAt     DateTime?
+  deliveredAt   DateTime?
+  
+  items         OrderItem[]
+  
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  
+  @@map("orders")
+}
+
+model OrderItem {
+  id          String  @id @default(cuid())
+  orderId     String
+  order       Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId   String?
+  product     Product? @relation(fields: [productId], references: [id])
+  
+  // Product snapshot (immutable)
+  productName   String
+  productImage  String?
+  unitPrice     Int     // Price in cents
+  quantity      Int
+  total         Int     // Price * quantity
+  
+  createdAt     DateTime @default(now())
+  
+  @@map("order_items")
+}
+
+// ==========================================
+// PROMO CODES (P2)
+// ==========================================
+
+enum DiscountType {
+  PERCENTAGE
+  FIXED
+}
+
+model PromoCode {
+  id            String       @id @default(cuid())
+  code          String       @unique
+  discountType  DiscountType
+  discountValue Int          // Percentage (0-100) or fixed amount in cents
+  minOrder      Int?         // Minimum order amount in cents
+  maxUses       Int?
+  usedCount     Int          @default(0)
+  expiresAt     DateTime?
+  isActive      Boolean      @default(true)
+  
+  createdAt     DateTime     @default(now())
+  
+  @@map("promo_codes")
+}

@@ -1,0 +1,60 @@
+{
+    "nav": {
+        "home": "Accueil",
+        "shop": "Boutique",
+        "cart": "Panier"
+    },
+    "hero": {
+        "badge": "Nouvelle Collection",
+        "title": "Sublimez Votre Style Au Quotidien",
+        "subtitle": "Des accessoires sélectionnés avec soin, à des prix adorables et avec une livraison gratuite rapide.",
+        "cta": "Acheter Maintenant"
+    },
+    "products": {
+        "title": "Tendances du Moment",
+        "addToBasket": "Ajouter au Panier",
+        "added": "Ajouté au Panier"
+    },
+    "features": {
+        "materials": {
+            "title": "Matériaux Premium",
+            "description": "Nous n'utilisons que la plus fine soie de mûrier 100% et des perles d'eau douce authentiques."
+        },
+        "adorablePrices": {
+            "title": "Prix Adorables",
+            "description": "Des accessoires de qualité à des prix tout doux, accessibles pour toutes les petites princesses."
+        },
+        "shipping": {
+            "title": "Livraison Gratuite",
+            "description": "Livraison gratuite sur toutes les commandes. Expédition sous 3-5 jours."
+        }
+    },
+    "cart": {
+        "title": "Panier d'Achat",
+        "empty": {
+            "title": "Votre Panier est Vide",
+            "description": "On dirait que vous n'avez pas encore ajouté d'accessoires. Explorez notre collection pour trouver quelque chose de beau.",
+            "cta": "Commencer vos Achats"
+        },
+        "summary": {
+            "title": "Récapitulatif",
+            "subtotal": "Sous-total",
+            "shipping": "Livraison",
+            "free": "Gratuit",
+            "tax": "Taxes",
+            "taxNote": "Calculé à la caisse",
+            "total": "Total",
+            "checkout": "Payer avec Stripe",
+            "secure": "Paiement Sécurisé via Stripe"
+        },
+        "remove": "Supprimer l'article"
+    },
+    "success": {
+        "title": "Merci pour Votre Commande !",
+        "description": "Vos beaux accessoires sont en cours de préparation avec soin. Nous vous enverrons un e-mail de confirmation sous peu.",
+        "cta": "Continuer vos Achats"
+    },
+    "footer": {
+        "rights": "Tous droits réservés."
+    }
+}

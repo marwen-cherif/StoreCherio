@@ -1,0 +1,368 @@
+{
+    "products": [
+        {
+            "id": "prod_001",
+            "name": "Noeud Rose Satiné",
+            "slug": "noeud-rose-satine",
+            "description": "Magnifique nœud en satin rose, parfait pour les occasions spéciales. Doux et confortable pour les cheveux des enfants.",
+            "price": 1290,
+            "compareAtPrice": null,
+            "currency": "EUR",
+            "category": "noeuds",
+            "tags": [
+                "rose",
+                "satin",
+                "fête",
+                "occasion"
+            ],
+            "images": [
+                "/products/noeud-rose-1.jpg",
+                "/products/noeud-rose-2.jpg"
+            ],
+            "stock": 50,
+            "lowStockThreshold": 10,
+            "isActive": true,
+            "isFeatured": true,
+            "variants": [
+                {
+                    "id": "var_001a",
+                    "name": "Petit",
+                    "price": 1290,
+                    "stock": 20
+                },
+                {
+                    "id": "var_001b",
+                    "name": "Grand",
+                    "price": 1590,
+                    "stock": 30
+                }
+            ],
+            "metadata": {
+                "material": "Satin",
+                "size": "8cm",
+                "ageRange": "3+",
+                "careInstructions": "Lavage délicat"
+            }
+        },
+        {
+            "id": "prod_002",
+            "name": "Chouchou Licorne Arc-en-ciel",
+            "slug": "chouchou-licorne-arc-en-ciel",
+            "description": "Chouchou magique avec motif licorne et couleurs arc-en-ciel. Un must pour les petites princesses !",
+            "price": 890,
+            "compareAtPrice": 1190,
+            "currency": "EUR",
+            "category": "chouchous",
+            "tags": [
+                "licorne",
+                "arc-en-ciel",
+                "magique",
+                "coloré"
+            ],
+            "images": [
+                "/products/chouchou-licorne-1.jpg"
+            ],
+            "stock": 75,
+            "lowStockThreshold": 15,
+            "isActive": true,
+            "isFeatured": true,
+            "variants": [],
+            "metadata": {
+                "material": "Velours",
+                "size": "5cm",
+                "ageRange": "3+",
+                "careInstructions": "Lavage machine 30°"
+            }
+        },
+        {
+            "id": "prod_003",
+            "name": "Barrettes Papillon (Lot de 4)",
+            "slug": "barrettes-papillon-lot-4",
+            "description": "Ensemble de 4 barrettes papillon aux couleurs pastel. Fermeture sécurisée et douce pour les cheveux fins.",
+            "price": 1490,
+            "compareAtPrice": null,
+            "currency": "EUR",
+            "category": "barrettes",
+            "tags": [
+                "papillon",
+                "pastel",
+                "lot",
+                "barrette"
+            ],
+            "images": [
+                "/products/barrettes-papillon-1.jpg",
+                "/products/barrettes-papillon-2.jpg"
+            ],
+            "stock": 30,
+            "lowStockThreshold": 8,
+            "isActive": true,
+            "isFeatured": false,
+            "variants": [],
+            "metadata": {
+                "material": "Métal + Résine",
+                "size": "4cm",
+                "ageRange": "3+",
+                "quantity": 4
+            }
+        },
+        {
+            "id": "prod_004",
+            "name": "Bandeau Couronne de Fleurs",
+            "slug": "bandeau-couronne-fleurs",
+            "description": "Bandeau élastique avec couronne de petites fleurs en tissu. Idéal pour les anniversaires et photos.",
+            "price": 1690,
+            "compareAtPrice": 1990,
+            "currency": "EUR",
+            "category": "bandeaux",
+            "tags": [
+                "fleurs",
+                "couronne",
+                "anniversaire",
+                "photo"
+            ],
+            "images": [
+                "/products/bandeau-couronne-1.jpg"
+            ],
+            "stock": 25,
+            "lowStockThreshold": 5,
+            "isActive": true,
+            "isFeatured": true,
+            "variants": [
+                {
+                    "id": "var_004a",
+                    "name": "Rose",
+                    "price": 1690,
+                    "stock": 10
+                },
+                {
+                    "id": "var_004b",
+                    "name": "Blanc",
+                    "price": 1690,
+                    "stock": 8
+                },
+                {
+                    "id": "var_004c",
+                    "name": "Multicolore",
+                    "price": 1790,
+                    "stock": 7
+                }
+            ],
+            "metadata": {
+                "material": "Élastique + Fleurs en tissu",
+                "size": "Ajustable 3-8 ans",
+                "ageRange": "3+",
+                "careInstructions": "Nettoyage à sec recommandé"
+            }
+        },
+        {
+            "id": "prod_005",
+            "name": "Set Élastiques Fruits (20 pcs)",
+            "slug": "set-elastiques-fruits-20pcs",
+            "description": "Set de 20 élastiques avec breloques fruits : fraises, cerises, pastèques et plus. Couleurs vives !",
+            "price": 990,
+            "compareAtPrice": null,
+            "currency": "EUR",
+            "category": "elastiques",
+            "tags": [
+                "fruits",
+                "lot",
+                "elastique",
+                "coloré"
+            ],
+            "images": [
+                "/products/elastiques-fruits-1.jpg"
+            ],
+            "stock": 100,
+            "lowStockThreshold": 20,
+            "isActive": true,
+            "isFeatured": false,
+            "variants": [],
+            "metadata": {
+                "material": "Élastique + Plastique",
+                "size": "3cm",
+                "ageRange": "3+",
+                "quantity": 20
+            }
+        },
+        {
+            "id": "prod_006",
+            "name": "Serre-tête Lapin Velours",
+            "slug": "serre-tete-lapin-velours",
+            "description": "Adorable serre-tête avec oreilles de lapin en velours. Ultra doux et confortable toute la journée.",
+            "price": 1390,
+            "compareAtPrice": null,
+            "currency": "EUR",
+            "category": "serre-tetes",
+            "tags": [
+                "lapin",
+                "velours",
+                "mignon",
+                "doux"
+            ],
+            "images": [
+                "/products/serre-tete-lapin-1.jpg",
+                "/products/serre-tete-lapin-2.jpg"
+            ],
+            "stock": 40,
+            "lowStockThreshold": 10,
+            "isActive": true,
+            "isFeatured": true,
+            "variants": [
+                {
+                    "id": "var_006a",
+                    "name": "Rose poudré",
+                    "price": 1390,
+                    "stock": 15
+                },
+                {
+                    "id": "var_006b",
+                    "name": "Blanc",
+                    "price": 1390,
+                    "stock": 15
+                },
+                {
+                    "id": "var_006c",
+                    "name": "Gris",
+                    "price": 1390,
+                    "stock": 10
+                }
+            ],
+            "metadata": {
+                "material": "Velours + Mousse",
+                "size": "Taille unique enfant",
+                "ageRange": "3+",
+                "careInstructions": "Lavage délicat"
+            }
+        },
+        {
+            "id": "prod_007",
+            "name": "Pinces Clic-Clac Étoiles (6 pcs)",
+            "slug": "pinces-clic-clac-etoiles-6pcs",
+            "description": "Pack de 6 pinces clic-clac avec paillettes et motifs étoiles. Tenue parfaite toute la journée.",
+            "price": 790,
+            "compareAtPrice": null,
+            "currency": "EUR",
+            "category": "pinces",
+            "tags": [
+                "etoiles",
+                "paillettes",
+                "clic-clac",
+                "lot"
+            ],
+            "images": [
+                "/products/pinces-etoiles-1.jpg"
+            ],
+            "stock": 60,
+            "lowStockThreshold": 12,
+            "isActive": true,
+            "isFeatured": false,
+            "variants": [],
+            "metadata": {
+                "material": "Métal + Paillettes",
+                "size": "5cm",
+                "ageRange": "3+",
+                "quantity": 6
+            }
+        },
+        {
+            "id": "prod_008",
+            "name": "Coffret Cadeau Princesse",
+            "slug": "coffret-cadeau-princesse",
+            "description": "Coffret cadeau complet : 1 diadème, 2 barrettes, 3 élastiques et 1 chouchou assortis. Emballage cadeau inclus.",
+            "price": 2990,
+            "compareAtPrice": 3590,
+            "currency": "EUR",
+            "category": "coffrets",
+            "tags": [
+                "coffret",
+                "cadeau",
+                "princesse",
+                "complet"
+            ],
+            "images": [
+                "/products/coffret-princesse-1.jpg",
+                "/products/coffret-princesse-2.jpg",
+                "/products/coffret-princesse-3.jpg"
+            ],
+            "stock": 15,
+            "lowStockThreshold": 5,
+            "isActive": true,
+            "isFeatured": true,
+            "variants": [
+                {
+                    "id": "var_008a",
+                    "name": "Rose",
+                    "price": 2990,
+                    "stock": 8
+                },
+                {
+                    "id": "var_008b",
+                    "name": "Violet",
+                    "price": 2990,
+                    "stock": 7
+                }
+            ],
+            "metadata": {
+                "material": "Mixte",
+                "size": "Taille unique enfant",
+                "ageRange": "3+",
+                "includes": "Diadème, 2 barrettes, 3 élastiques, 1 chouchou"
+            }
+        }
+    ],
+    "categories": [
+        {
+            "id": "noeuds",
+            "name": "Nœuds",
+            "slug": "noeuds",
+            "description": "Nœuds élégants pour toutes occasions"
+        },
+        {
+            "id": "chouchous",
+            "name": "Chouchous",
+            "slug": "chouchous",
+            "description": "Chouchous doux et colorés"
+        },
+        {
+            "id": "barrettes",
+            "name": "Barrettes",
+            "slug": "barrettes",
+            "description": "Barrettes décoratives"
+        },
+        {
+            "id": "bandeaux",
+            "name": "Bandeaux",
+            "slug": "bandeaux",
+            "description": "Bandeaux et headbands"
+        },
+        {
+            "id": "elastiques",
+            "name": "Élastiques",
+            "slug": "elastiques",
+            "description": "Élastiques et sets"
+        },
+        {
+            "id": "serre-tetes",
+            "name": "Serre-têtes",
+            "slug": "serre-tetes",
+            "description": "Serre-têtes fantaisie"
+        },
+        {
+            "id": "pinces",
+            "name": "Pinces",
+            "slug": "pinces",
+            "description": "Pinces et clips"
+        },
+        {
+            "id": "coffrets",
+            "name": "Coffrets",
+            "slug": "coffrets",
+            "description": "Coffrets cadeaux"
+        }
+    ],
+    "_metadata": {
+        "lastUpdated": "2026-02-07",
+        "version": "1.0.0",
+        "notes": "Modifiez ce fichier pour gérer vos produits. Les prix sont en centimes (1290 = 12.90€)."
+    }
+}
