@@ -55,6 +55,24 @@
         "cta": "Continuer vos Achats"
     },
     "footer": {
-        "rights": "Tous droits réservés."
+        "rights": "Tous droits réservés.",
+        "terms": "Conditions Générales de Vente",
+        "privacy": "Politique de Confidentialité"
+    },
+    "legal": {
+        "terms": {
+            "title": "Conditions Générales de Vente",
+            "lastUpdated": "Dernière mise à jour : Février 2026",
+            "intro": "Bienvenue chez Eva Accessories. En utilisant notre site, vous acceptez ces conditions.",
+            "use": "Vous acceptez d'utiliser notre site uniquement à des fins légales.",
+            "products": "Nous nous efforçons d'afficher aussi précisément que possible les couleurs et images de nos produits."
+        },
+        "privacy": {
+            "title": "Politique de Confidentialité",
+            "lastUpdated": "Dernière mise à jour : Février 2026",
+            "intro": "Votre vie privée est importante pour nous. Cette politique explique comment nous collectons et utilisons vos informations.",
+            "collection": "Nous collectons les informations que vous nous fournissez directement, par exemple lorsque vous créez un compte ou effectuez un achat.",
+            "usage": "Nous utilisons les informations collectées pour fournir, maintenir et améliorer nos services."
+        }
     }
 }

@@ -55,6 +55,24 @@
         "cta": "Continue Shopping"
     },
     "footer": {
-        "rights": "All rights reserved."
+        "rights": "All rights reserved.",
+        "terms": "Terms of Service",
+        "privacy": "Privacy Policy"
+    },
+    "legal": {
+        "terms": {
+            "title": "Terms of Service",
+            "lastUpdated": "Last Updated: February 2026",
+            "intro": "Welcome to Eva Accessories. By using our website, you agree to these terms.",
+            "use": "You agree to use our site for lawful purposes only.",
+            "products": "We make every effort to display as accurately as possible the colors and images of our products."
+        },
+        "privacy": {
+            "title": "Privacy Policy",
+            "lastUpdated": "Last Updated: February 2026",
+            "intro": "Your privacy is important to us. This policy explains how we collect and use your information.",
+            "collection": "We collect information you provide directly to us, such as when you create an account or make a purchase.",
+            "usage": "We use the information we collect to provide, maintain, and improve our services."
+        }
     }
 }
